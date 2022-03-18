@@ -27,6 +27,8 @@ target_link_libraries(${TARGET_NAME}
   ${MODULES}
 )
 
+message("gtest include dir: ${gtest_SOURCE_DIR}/include")
+
 target_include_directories(${TARGET_NAME}
   PRIVATE
     "${gtest_SOURCE_DIR}/include"
