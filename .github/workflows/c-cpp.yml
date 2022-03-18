@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: Build and run tests
 
 on:
   push:
@@ -9,12 +9,15 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v2
     - name: configure
-      run: mkdir build && cmake -S . -B ./build
+      run: cmake -S . -B ./build
     - name: make
       run: cmake --build ./build
+    - name: tests
+      run: cd build && ctest
+
+  
