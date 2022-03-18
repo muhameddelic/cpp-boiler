@@ -6,7 +6,6 @@ set(TARGET_NAME tests)
 
 set(MODULES
   hello-lib
-  gtest
   gtest_main
 )
 
@@ -26,6 +25,11 @@ add_executable(${TARGET_NAME}
 
 target_link_libraries(${TARGET_NAME}
   ${MODULES}
+)
+
+target_include_directories(${TARGET_NAME}
+  PRIVATE
+    "${gtest_SOURCE_DIR}/include"
 )
 
 #-----------------------------------------------------------------
