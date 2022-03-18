@@ -6,6 +6,7 @@ set(TARGET_NAME tests)
 
 set(MODULES
   hello-lib
+  gtest
   gtest_main
 )
 
@@ -19,13 +20,6 @@ set(TEST_FILES
 
 add_executable(${TARGET_NAME}
   ${TEST_FILES}
-)
-
-#-----------------------------------------------------------------
-
-target_include_directories(${TARGET_NAME}
-  PRIVATE
-    gtest
 )
 
 #-----------------------------------------------------------------
