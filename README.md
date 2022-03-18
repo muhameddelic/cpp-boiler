@@ -12,7 +12,7 @@ Right now this is pretty barebones, as projects go on the intention is to keep b
 ### Prerequisites
 
 - C++ compiler toolset (VC, Clang, GCC etc.)
-- CMake >= 3.10
+- CMake >= 3.14
 
 ### Create your own repo with GitHub Templates
 
@@ -22,4 +22,26 @@ Instead of forking, you can simply create your own repo using the templates feat
 
 The layout is quite simple, currently there are two main subdirectories:
  - `src`: Source files, each module should live in its own subdirectory, take a look at `hello-world`.
- - `tests`: Unit tests, should shadow your source directory structure.
+ - `tests`: Unit tests, one test file per module, or however many you like.
+
+### Building & Testing
+
+1. Generate compiler configuration files
+```shell
+cmake -S . -B build
+```
+
+2. Build
+```shell
+cmake --build build
+```
+
+3. Run tests ([GoogleTest](https://google.github.io/googletest/) is setup and ready to go)
+```shell
+cd build && ctest
+```
+
+## todos
+
+- [ ] Setup a better file structure for the build output via CMake
+- [ ] Build script, platform independent, Python?

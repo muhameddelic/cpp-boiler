@@ -4,9 +4,13 @@
 
 //-------------------------------------------------------------
 
+#include <string>
+
+//-------------------------------------------------------------
+
 namespace hello {
 
-  void world(const char* name);
+  std::string world(const std::string& name);
 
 };
 

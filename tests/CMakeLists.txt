@@ -1,23 +1,35 @@
 #-----------------------------------------------------------------
 
-cmake_minimum_required(VERSION 3.14)
+set(TARGET_NAME tests)
 
 #-----------------------------------------------------------------
 
-project(cpp-boiler C CXX)
+set(MODULES
+  hello-lib
+  gtest_main
+)
 
 #-----------------------------------------------------------------
 
-set(CMAKE_CXX_STANDARD 17)
+set(TEST_FILES
+  test_hello.cpp
+)
 
 #-----------------------------------------------------------------
 
-include(${CMAKE_SOURCE_DIR}/cmake/SetupGoogleTest.cmake)
-enable_testing()
+add_executable(${TARGET_NAME}
+  ${TEST_FILES}
+)
 
 #-----------------------------------------------------------------
 
-add_subdirectory("src")
-add_subdirectory("tests")
+target_link_libraries(${TARGET_NAME}
+  ${MODULES}
+)
+
+#-----------------------------------------------------------------
+
+include(GoogleTest)
+gtest_discover_tests(${TARGET_NAME})
 
 #-----------------------------------------------------------------

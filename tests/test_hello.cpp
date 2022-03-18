@@ -1,19 +1,19 @@
 //-------------------------------------------------------------
 
+#include <gtest/gtest.h>
+
+//-------------------------------------------------------------
+
+#include <string>
+
+//-------------------------------------------------------------
+
 #include "hello.h"
 
 //-------------------------------------------------------------
 
-#include <sstream>
-
-//-------------------------------------------------------------
-
-std::string hello::world(const std::string& name)
-{
-  std::ostringstream ostream; 
-  ostream << "Hello, " << name << "!";
-
-  return ostream.str();
+TEST(HelloTest, FooBar) {
+  EXPECT_STREQ(hello::world("Foo Bar").c_str(), "Hello, Foo Bar!");
 }
 
 //-------------------------------------------------------------
