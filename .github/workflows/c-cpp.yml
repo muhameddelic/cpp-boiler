@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         # todo: fix build on linux & macOS (ubuntu-latest, macos-latest)
-        os: [windows-latest]
+        os: [ubuntu-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v2
