@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: conan install
+      run: mkdir build && conan install .. && cd ..
     - name: configure
       run: cmake -S . -B ./build
     - name: make
