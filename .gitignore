@@ -5,8 +5,9 @@ build/
 # vscode workspace settings
 .vscode/
 
-# Created by https://www.toptal.com/developers/gitignore/api/c++,cmake,visualstudio,visualstudiocode,xcode
-# Edit at https://www.toptal.com/developers/gitignore?templates=c++,cmake,visualstudio,visualstudiocode,xcode
+
+# Created by https://www.toptal.com/developers/gitignore/api/c++,cmake,visualstudio,visualstudiocode,xcode,conan
+# Edit at https://www.toptal.com/developers/gitignore?templates=c++,cmake,visualstudio,visualstudiocode,xcode,conan
 
 ### C++ ###
 # Prerequisites
@@ -58,6 +59,28 @@ _deps
 ### CMake Patch ###
 # External projects
 *-prefix/
+
+### Conan ###
+# Conan build information
+conan.lock
+conanbuildinfo.*
+conaninfo.txt
+graph_info.json
+
+## Various built-in generators
+# cmake_find_package generator https://docs.conan.io/en/latest/reference/generators/cmake_find_package.html
+Find*.cmake
+
+# cmake_paths generator https://docs.conan.io/en/1.4/integrations/cmake/cmake_paths_generator.html
+conan_paths.*
+
+# Environment activation scripts produced by https://docs.conan.io/en/latest/mastering/virtualenv.html#virtualenv-generator
+activate_run.ps1
+activate_run.sh
+deactivate_run.ps1
+deactivate_run.sh
+environment_run.ps1.env
+environment_run.sh.env
 
 ### VisualStudioCode ###
 .vscode/*
@@ -489,4 +512,4 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/c++,cmake,visualstudio,visualstudiocode,xcode
+# End of https://www.toptal.com/developers/gitignore/api/c++,cmake,visualstudio,visualstudiocode,xcode,conan

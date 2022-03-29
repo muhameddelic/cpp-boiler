@@ -13,6 +13,8 @@ Right now this is pretty barebones, as projects go on the intention is to keep b
 
 - C++ compiler toolset (VC, Clang, GCC etc.)
 - CMake >= 3.14
+- [Conan package manager](https://docs.conan.io/en/latest/installation.html)
+  - Python >= 3.5
 
 ### Create your own repo with GitHub Templates
 
@@ -26,17 +28,22 @@ The layout is quite simple, currently there are two main subdirectories:
 
 ### Building & Testing
 
-1. Generate compiler configuration files
+1. Fetch dependencies via Conan. Dependencies are defined in `conanfile.txt`.
+```shell
+mkdir build && cd build && conan install .. && cd ..
+```
+
+2. Generate compiler configuration files
 ```shell
 cmake -S . -B build
 ```
 
-2. Build
+3. Build
 ```shell
 cmake --build build
 ```
 
-3. Run tests ([GoogleTest](https://google.github.io/googletest/) is setup and ready to go)
+4. Run tests ([GoogleTest](https://google.github.io/googletest/) is setup and ready to go)
 ```shell
 cd build && ctest
 ```
