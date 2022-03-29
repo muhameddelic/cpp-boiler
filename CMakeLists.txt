@@ -12,6 +12,10 @@ set(CMAKE_CXX_STANDARD 17)
 
 #-----------------------------------------------------------------
 
+include(${CMAKE_SOURCE_DIR}/cmake/SetupBuildPath.cmake)
+
+#-----------------------------------------------------------------
+
 include(${CMAKE_SOURCE_DIR}/cmake/SetupGoogleTest.cmake)
 enable_testing()
 
